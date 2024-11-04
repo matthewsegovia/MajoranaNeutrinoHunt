@@ -16,7 +16,7 @@ def lfpr(frq_waveform,threshold=0.05):
     low_frequency_power = np.sum(power_spectrum[frq_tdrift < threshold])
     return low_frequency_power / np.sum(power_spectrum)
 
-#Visualization
+# Load data
 files = [
     "MJD_NPML_1.hdf5",
     "MJD_NPML_2.hdf5",
@@ -77,10 +77,12 @@ with h5py.File(file_path, 'r') as file:
     run_number_value = run_number[random_index]
     id_value = id[random_index]
 
+# Extract parameters
 fft_tdrift, frq_tdrift = normalized_fourier(random_waveform, tp0_value)
 peak = np.argmax(random_waveform)
 time_tdrift = np.arange(peak-tp0_value)
 
+# Visualization
 plt.figure(figsize=(12, 6))
 plt.subplot(2, 1, 1)
 plt.plot(time_tdrift, random_waveform[tp0_value:peak])

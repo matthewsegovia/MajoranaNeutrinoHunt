@@ -10,7 +10,7 @@ def tdrift(waveform, tp0):
     tdrift10 = (peak-tp0) * 0.1
     return tdrift, tdrift50, tdrift10
 
-#Visualization
+# Load Data
 files = [
     "MJD_NPML_1.hdf5",
     "MJD_NPML_2.hdf5",
@@ -70,8 +70,10 @@ with h5py.File(file_path, 'r') as file:
     run_number_value = run_number[random_index]
     id_value = id[random_index]
 
+# Extract parameter
 tdrift, tdrift50, tdrift10 = tdrift(random_waveform, tp0_value)
 
+# Visualization
 plt.figure(figsize=(10, 5))
 plt.plot(random_waveform)
 plt.title(f'Random Raw Waveform (Index: {random_index})')
