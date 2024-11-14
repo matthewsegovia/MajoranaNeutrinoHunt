@@ -1,3 +1,5 @@
+import numpy as np
+
 def get_tdrift50(waveform, start_idx = 1000):
     
     # Find the index of the peak value
