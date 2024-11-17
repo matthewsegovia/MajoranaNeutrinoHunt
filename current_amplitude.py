@@ -14,18 +14,6 @@ from scipy.interpolate import interp1d
 window_size = 101  
 poly_order = 3  
 
-
-# In[5]:
-
-
-# read data
-with h5py.File('MJD_NPML_2.hdf5', 'r') as f:
-    waveform = np.array(f['raw_waveform'])
-
-
-# In[22]:
-
-
 def single_waveform(i):
 
     # Interpolate
