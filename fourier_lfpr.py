@@ -13,5 +13,5 @@ def normalized_fourier(waveform, tp0):
 # Low Frequency Power Ratio
 def lfpr(frq_waveform,threshold=0.05):
     power_spectrum = np.abs(frq_waveform)**2
-    low_frequency_power = np.sum(power_spectrum[frq_tdrift < threshold])
+    low_frequency_power = np.sum(power_spectrum[frq_waveform < threshold])
     return low_frequency_power / np.sum(power_spectrum)
