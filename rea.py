@@ -4,6 +4,7 @@ import numpy as np
 from scipy import interpolate
 from scipy.stats import skew
 
+
 def rea(waveform, tp0):
 
     end = np.where(waveform == np.max(waveform))[0][0]

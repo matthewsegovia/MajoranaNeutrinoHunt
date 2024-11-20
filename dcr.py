@@ -15,6 +15,6 @@ def find_dcr(waveform):
     time_indices = np.arange(peak_idx, len(waveform))
 
     # Calculate DCR region
-    area_above_tail_slope = np.trapezoid(peak_val - data_after_peak, x=time_indices) 
-    
+    area_above_tail_slope = np.trapezoid(peak_val - data_after_peak, x=time_indices)
+
     return area_above_tail_slope
