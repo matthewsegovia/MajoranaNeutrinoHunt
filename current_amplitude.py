@@ -1,3 +1,4 @@
+# %%
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,12 +9,12 @@ from scipy.interpolate import interp1d
 window_size = 101
 poly_order = 3
 
-def single_waveform(i):
+def max_amplitude(waveform):
 
     # Interpolate
-    x = np.arange(len(waveform[i]))
-    interp_func = interp1d(x, waveform[i], kind='cubic')
-    x_interp = np.linspace(0, len(waveform[i]) - 1, len(waveform[i]) * 10)
+    x = np.arange(len(waveform))
+    interp_func = interp1d(x, waveform, kind='cubic')
+    x_interp = np.linspace(0, len(waveform) - 1, len(waveform) * 10)
     y_interp = interp_func(x_interp)
 
 

@@ -1,6 +1,4 @@
-# %%
 import numpy as np
-import matplotlib.pyplot as plt
 import h5py
 
 # Apply Fast Fourier Transform, and normalize it
