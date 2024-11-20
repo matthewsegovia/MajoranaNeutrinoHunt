@@ -1,7 +1,6 @@
 # %%
 import h5py
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 from scipy.interpolate import interp1d
 
