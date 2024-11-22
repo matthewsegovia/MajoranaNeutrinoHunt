@@ -27,3 +27,5 @@ The parameters used in this investigation include:
 - Fourier Transform (LFPR)
 - Energy Peak
 - Area Growth Rate (AGR)
+
+The Master.py file contains all these parameters combined. 
