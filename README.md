@@ -28,6 +28,4 @@ The parameters used in this investigation include:
 - Energy Peak
 - Area Growth Rate (AGR)
 
-The Master.py file contains all these parameters combined. 
-
-The requriements.txt file contains all the python packages needed prior to running the code.
+The Master.py file contains all these parameters combined and requriements.txt file lists all the python packages needed prior to running the code.

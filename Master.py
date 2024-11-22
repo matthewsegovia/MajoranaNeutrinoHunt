@@ -9,7 +9,7 @@ import numpy as np
 import time
 
 #add path for import to search in (folder with all the scripts)
-sys.path.append("/Users/marcosanchez/MajoranaHunt/MajoranaNeutrinoHunt")
+sys.path.append("/Users/marcosanchez/MajoranaHunt/MajoranaNeutrinoHunt/parameter_functions")
 
 #import parameter extraction functions
 from tdrift import tdrift
