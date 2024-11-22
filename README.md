@@ -15,14 +15,16 @@ The goal of this project is to develop parameters that will be extracted from th
 
 The parameters used in this investigation include:
 
-- Drift Time (tdrift)
+- Drift Time (tdrift: 10, 50, 99.9)
 - Late Charge (LQ80)
 - Late Charge Slope 
 - Second derivative Inflection Points
 - Rising Edge Slope
-- Rising Edge Asymmetry
+- Rising Edge Asymmetry (rea)
 - Current Amplitude
 - Tail Slope
-- Delayed Charge Recovery (DCR)
+- Delayed Charge Recovery (dcr)
 - Fourier Transform (lfpr)
 - Energy Peak
+- Area Growth Rate (agr)
+- Inflextion Points
