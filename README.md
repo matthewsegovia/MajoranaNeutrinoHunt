@@ -20,11 +20,11 @@ The parameters used in this investigation include:
 - Late Charge Slope 
 - Second derivative Inflection Points
 - Rising Edge Slope
-- Rising Edge Asymmetry (rea)
+- Rising Edge Asymmetry (REA)
 - Current Amplitude
 - Tail Slope
-- Delayed Charge Recovery (dcr)
-- Fourier Transform (lfpr)
+- Delayed Charge Recovery (DCR)
+- Fourier Transform (LFPR)
 - Energy Peak
-- Area Growth Rate (agr)
-- Inflextion Points
+- Area Growth Rate (AGR)
+- Inflection Points
