@@ -27,4 +27,3 @@ The parameters used in this investigation include:
 - Fourier Transform (LFPR)
 - Energy Peak
 - Area Growth Rate (AGR)
-- Inflection Points
