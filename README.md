@@ -27,6 +27,7 @@ This repository contains the files for all parameters functions that will be use
 The parameters used in this investigation include:
 
 - Drift Time (tdrift.py): The time taken from the initiation of charge generation to the collection at the detector's point contact at increments of 10%, 50% and 99.9%.
+\n
 - Late Charge (lq80.py): The amount of energy being collected after 80% of the peak.
 - Late Charge Slope: The integrated drift time of the charge collected after 80% of the waveform.
 - Second derivative Inflection Points (inflection.py): The amount of inflection points from 80% of our charge to the peak.
