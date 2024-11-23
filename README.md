@@ -14,7 +14,7 @@ Contributors:
 The goal of this project is to develop parameters that will be extracted from the time series data provided to us publicly by the Majorana Demonstrator experiement in order to propose machine learning models that meet the requirements outlined in the Neutrino Physics and Machine Learning (NPML) instructions included in the Majorana Demonstrator data release notes.
 
 ## Installation Instructions
-1. Clone the repository:
+How to clone the repository:
 ``` bash
 git clone https://github.com/matthewsegovia/MajoranaNeutrinoHunt.git
 ``` 
@@ -34,10 +34,8 @@ The parameters used in this investigation include:
 - Tail Slope: 
 - Delayed Charge Recovery (DCR): The area above the tail slope to the peak of the rise.
 - Fourier Transform (LFPR): 
-
-- Energy Peak
-
-- Area Growth Rate (AGR)
+- Energy Peak: 
+- Area Growth Rate (AGR): 
 
 The Master.py file contains all these parameters combined and requriements.txt file lists all the python packages needed prior to running the code.
 
