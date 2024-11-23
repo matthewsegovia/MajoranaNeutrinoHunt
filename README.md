@@ -30,7 +30,7 @@ The parameters used in this investigation include:
 
 - **Late Charge** (lq80.py): The amount of energy being collected after 80% of the peak. 
 
-- **Late Charge Slope**: The integrated drift time of the charge collected after 80% of the waveform. 
+- **Late Charge Slope** (Area Growth Rate (agr.py)): The integrated drift time of the charge collected after 80% of the waveform. 
 
 - **Second derivative Inflection Points** (inflection.py): The amount of inflection points from 80% of our charge to the peak. 
 
@@ -46,9 +46,7 @@ The parameters used in this investigation include:
 
 - **Delayed Charge Recovery** (dcr.py): The rate of area growth in the tail slope region. This is measured by the area above the tail slope to the peak of the rise. 
 
-- **Fourier Transform and Low Frequency Power Ratio** (fourier_lfpr.py): The Fourier Transform is a mathematical operation that transforms a time-domain signal into its frequency-domain representation. Low Frequency Power Ratio (LFPR) is used, quantifying how much of the signal’s energy is concentrated in the low-frequency threshold by the total power spectrum of the Fourier transformed waveform.
-
-- **Area Growth Rate** (agr.py):  
+- **Fourier Transform and Low Frequency Power Ratio** (fourier_lfpr.py): The Fourier Transform is a mathematical operation that transforms a time-domain signal into its frequency-domain representation. Low Frequency Power Ratio (LFPR) is used, quantifying how much of the signal’s energy is concentrated in the low-frequency threshold by the total power spectrum of the Fourier transformed waveform.  
 
 The Master.py file combines all these parameters into one file.
 
