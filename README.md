@@ -34,19 +34,19 @@ The parameters used in this investigation include:
 
 - Second derivative Inflection Points (inflection.py): The amount of inflection points from 80% of our charge to the peak. 
 
-- Rising Edge Slope (rising_edge.py): 
+- Rising Edge Slope (rising_edge.py): The slope of the charge that was recorded.
 
-- Rising Edge Asymmetry (rea.py): 
+- Rising Edge Asymmetry (rea.py): This function measures how tilted in a direction the rising edge of the signal is.
 
-- Current Amplitude (current_amplitude.py):  
+- Current Amplitude (current_amplitude.py): The peak rate of charge collection, defined as I = dq/dt which means current amplitude is the derivative of charge.
 
-- Energy Peak (peakandtailslope.py):  
+- Energy Peak (peakandtailslope.py): The maximum analog-to-digital (ADC) count. The height of this peak correlates with the energy deposited by the particle in the detector.
 
-- Tail Slope (peakandtailslope.py):  
+- Tail Slope (peakandtailslope.py): The rate of charge collection over the length of the waveform’s tail. It indicates how quickly charge dissipates in the detector after the initial interaction.
 
-- Delayed Charge Recovery (dcr.py): The area above the tail slope to the peak of the rise. 
+- Delayed Charge Recovery (dcr.py): The rate of area growth in the tail slope region. This is measured by the area above the tail slope to the peak of the rise. 
 
-- Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py):  
+- Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py): The Fourier Transform is a mathematical operation that transforms a time-domain signal into its frequency-domain representation. Low Frequency Power Ratio (LFPR) is used, quantifying how much of the signal’s energy is concentrated in the low-frequency threshold by the total power spectrum of the Fourier transformed waveform.
 
 - Area Growth Rate (agr.py):  
 
