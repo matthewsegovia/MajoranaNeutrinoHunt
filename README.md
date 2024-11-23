@@ -55,3 +55,4 @@ The Master.py file combines all these parameters into one file.
 ## Contributing
 
 ## Further Reading
+[Majorana Demonstrator Data Release Notes](https://arxiv.org/pdf/2308.10856)
