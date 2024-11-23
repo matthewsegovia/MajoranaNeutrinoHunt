@@ -26,19 +26,18 @@ This repository contains the files for all parameters functions that will be use
 
 The parameters used in this investigation include:
 
-- Drift Time (tdrift.py): The time taken from the initiation of charge generation to the collection at the detector's point contact at increments of 10%, 50% and 99.9%.
-\n
-- Late Charge (lq80.py): The amount of energy being collected after 80% of the peak.
-- Late Charge Slope: The integrated drift time of the charge collected after 80% of the waveform.
-- Second derivative Inflection Points (inflection.py): The amount of inflection points from 80% of our charge to the peak.
-- Rising Edge Slope (rising_edge.py): 
-- Rising Edge Asymmetry (rea.py): 
-- Current Amplitude (current_amplitude.py): 
-- Energy Peak (peakandtailslope.py): 
-- Tail Slope (peakandtailslope.py): 
-- Delayed Charge Recovery (dcr.py): The area above the tail slope to the peak of the rise.
-- Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py): 
-- Area Growth Rate (agr.py): 
+- Drift Time (tdrift.py): The time taken from the initiation of charge generation to the collection at the detector's point contact at increments of 10%, 50% and 99.9%. <br />
+- Late Charge (lq80.py): The amount of energy being collected after 80% of the peak. <br />
+- Late Charge Slope: The integrated drift time of the charge collected after 80% of the waveform. <br />
+- Second derivative Inflection Points (inflection.py): The amount of inflection points from 80% of our charge to the peak. <br />
+- Rising Edge Slope (rising_edge.py):  <br />
+- Rising Edge Asymmetry (rea.py):  <br />
+- Current Amplitude (current_amplitude.py):  <br />
+- Energy Peak (peakandtailslope.py):  <br /> 
+- Tail Slope (peakandtailslope.py):  <br /> 
+- Delayed Charge Recovery (dcr.py): The area above the tail slope to the peak of the rise. <br />
+- Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py):  <br />
+- Area Growth Rate (agr.py):  <br />
 
 The Master.py file combines all these parameters into one file.
 
