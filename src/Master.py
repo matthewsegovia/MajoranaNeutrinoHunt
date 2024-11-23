@@ -1,5 +1,5 @@
 # %%
-# imports
+# Imports
 import importlib
 import os
 import sys
@@ -7,11 +7,16 @@ import h5py
 import pandas as pd
 import numpy as np
 import time
+import Path
 
-#add path for import to search in (folder with all the scripts)
-sys.path.append("/Users/marcosanchez/MajoranaHunt/MajoranaNeutrinoHunt/parameter_functions")
+# Get the base directory of the repository
+repo_base_dir = Path(__file__).resolve().parent.parent
 
-#import parameter extraction functions
+# Add path for import to search in (folder with all the scripts)
+param_functions_path = repo_base_dir / "src" / "parameter_functions"
+sys.path.append(str(param_functions_path))
+
+# Import parameter extraction functions
 from tdrift import tdrift
 from rea import rea
 from dcr import find_dcr
@@ -23,22 +28,24 @@ from agr import area_growth_rate
 from inflection import inflection_points
 from rising_edge import rising_edge_slope
 
-data_files = [f for f in os.listdir("/Users/marcosanchez/MajoranaHunt") if f.endswith(".hdf5")]
+# Get all HDF5 files in the data directory
+data_dir = repo_base_dir / "data"
+data_files = [f for f in os.listdir(str(data_dir)) if f.endswith(".hdf5")]
 
 # %%
 start = time.time()
-# parameter extraction
+# Parameter extraction from all waveform data
 results = []
 for file in data_files:
     with h5py.File(file, 'r') as f:
         for wave in np.arange(f['raw_waveform'].shape[0]):
-            #needed labels
+            # Needed labels
             waveform = f['raw_waveform'][wave]
             tp0 = f['tp0'][wave]
             id = f['id'][wave]
 
-            #parameter extraction
-            tdriftVal = tdrift(waveform, tp0) #99, 50, 10
+            # Parameter extraction
+            tdriftVal = tdrift(waveform, tp0) # 99.9%, 50%, 10%
             reaVal = rea(waveform, tp0)
             dcrVal = find_dcr(waveform)
             peakandtailVal = extract_peak_and_tail_slope(waveform)

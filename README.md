@@ -19,6 +19,8 @@ How to clone the repository:
 git clone https://github.com/matthewsegovia/MajoranaNeutrinoHunt.git
 ``` 
 
+The requriements.txt file lists all the python packages as well as versions needed prior to running the code.
+
 ## Features
 This repository contains the files for all parameters functions that will be used to build and train machine learning models 
 
@@ -37,7 +39,7 @@ The parameters used in this investigation include:
 - Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py): 
 - Area Growth Rate (agr.py): 
 
-The Master.py file combines all these parameters into one file and requriements.txt lists all the python packages needed prior to running the code.
+The Master.py file combines all these parameters into one file.
 
 ## Contributing
 
