@@ -37,7 +37,7 @@ The parameters used in this investigation include:
 - Fourier Transform and Low Frequency Power Ratio (fourier_lfpr.py): 
 - Area Growth Rate (agr.py): 
 
-The Master.py file contains all these parameters combined and requriements.txt file lists all the python packages needed prior to running the code.
+The Master.py file combines all these parameters into one file and requriements.txt lists all the python packages needed prior to running the code.
 
 ## Contributing
 
