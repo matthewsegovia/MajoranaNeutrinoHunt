@@ -1,5 +1,3 @@
-# %%
-import h5py
 import numpy as np
 from scipy.signal import savgol_filter
 from scipy.interpolate import interp1d

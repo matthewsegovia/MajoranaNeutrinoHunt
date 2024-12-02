@@ -1,5 +1,4 @@
 # %% imports
-import h5py
 import numpy as np
 from scipy import interpolate
 from scipy.stats import skew

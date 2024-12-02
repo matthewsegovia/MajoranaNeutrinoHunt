@@ -1,5 +1,4 @@
 import numpy as np
-import h5py
 
 # Apply Fast Fourier Transform, and normalize it
 def normalized_fourier(waveform, tp0):

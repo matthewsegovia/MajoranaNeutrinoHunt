@@ -1,8 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import h5py
 from scipy.stats import linregress
-import argparse
 
 
 def extract_peak_and_tail_slope(waveform):

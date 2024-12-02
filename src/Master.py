@@ -1,14 +1,15 @@
 # %%
 # Imports
-import importlib
 import os
 import sys
 import h5py
 import pandas as pd
 import numpy as np
-import time
 import Path
 
+
+
+# %%
 # Get the base directory of the repository
 repo_base_dir = Path(__file__).resolve().parent.parent
 
@@ -33,7 +34,6 @@ data_dir = repo_base_dir / "data"
 data_files = [f for f in os.listdir(str(data_dir)) if f.endswith(".hdf5")]
 
 # %%
-start = time.time()
 # Parameter extraction from all waveform data
 results = []
 for file in data_files:
@@ -74,5 +74,3 @@ for file in data_files:
             })
         df = pd.DataFrame(results)
     df.to_csv("results.csv", index=False)
-end = time.time()
-print(end - start)

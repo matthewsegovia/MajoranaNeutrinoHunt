@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import h5py
 
 # Function for tdrift extraction
 def tdrift(waveform, tp0):
