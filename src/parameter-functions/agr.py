@@ -7,6 +7,8 @@ def area_growth_rate(waveform, tp0):
     waveform = waveform[1:]
     tp100 = np.argmax(waveform)
     tp100_val = waveform[tp100]
+    if len(waveform[tp0:tp100]) == 0:
+        return 0
     tp_val = (tp100_val * 0.8)
     tp80 = np.argmin(np.abs(waveform[tp0:tp100] - tp_val))
     threshold = waveform[tp80]
