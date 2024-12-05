@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
 
-def area_growth_rate(waveform):
-    tp0 = int(waveform[0])
+def area_growth_rate(waveform, tp0):
+    if tp0 < 0:
+        tp0 = np.abs(tp0)
     waveform = waveform[1:]
     tp100 = np.argmax(waveform)
     tp100_val = waveform[tp100]
