@@ -5,6 +5,8 @@ import pandas as pd
 def LQ80(waveform, tp0):
     if tp0 < 0:
         tp0 = np.abs(tp0)
+    if len(waveform[tp0:tp100]) == 0:
+        return 0
     tp100 = np.argmax(waveform)
     tp100_val = waveform[tp100]
     tp_val = (tp100_val * 0.8)
