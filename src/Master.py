@@ -47,7 +47,7 @@ for file in data_files:
             max_amp = max_amplitude(waveform)
             lfprVal = lfpr(normalized_fourier(waveform, tp0)[0])
             lq80 = LQ80(waveform, tp0)
-            agr = area_growth_rate(waveform)
+            agr = area_growth_rate(waveform, tp0)
             inflectionpts = inflection_points(waveform, tp0)
             res = rising_edge_slope(waveform, tp0)
 
