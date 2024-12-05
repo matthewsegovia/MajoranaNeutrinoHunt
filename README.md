@@ -50,5 +50,8 @@ The parameters used in this investigation include:
 
 The Master.py file combines all these parameters into one file.
 
+## Reproducing the Code
+The data can be downloaded at this [link](https://zenodo.org/records/8257027). There are 25 different data files, and this data is not processed. In order to extract parameters from the data, download the raw data and run the Master.py script located in the src folder of the repository.
+
 ## Further Reading
 [Majorana Demonstrator Data Release Notes](https://arxiv.org/pdf/2308.10856)
