@@ -25,7 +25,7 @@ from parameter_functions.inflection import inflection_points
 from parameter_functions.rising_edge import rising_edge_slope
 
 # Get all HDF5 files in the data directory
-data_dir = os.path.join(repo_base_dir, "data/") 
+data_dir = os.path.join(repo_base_dir, "data/")
 data_files = [f for f in os.listdir(str(data_dir)) if f.endswith(".hdf5")]
 
 # %%
@@ -38,6 +38,16 @@ for file in data_files:
             waveform = f['raw_waveform'][wave]
             tp0 = f['tp0'][wave]
             id = f['id'][wave]
+
+            #true labels
+            energy_label = f['energy_label'][wave]
+            high_avse = f['psd_label_high_avse'][wave]
+            low_avse = f['psd_label_high_avse'][wave]
+            truedcr = f['psd_label_dcr'][wave]
+            lq = f['psd_label_lq'][wave]
+
+
+
 
             # Parameter extraction
             tdriftVal = tdrift(waveform, tp0) # 99.9%, 50%, 10%
@@ -65,7 +75,12 @@ for file in data_files:
                 'lq80': lq80,
                 'areagrowthrate': agr,
                 'inflection point': inflectionpts,
-                'risingedgeslope': res
+                'risingedgeslope': res,
+                'energylabel': energy_label,
+                'highavse': high_avse,
+                'lowavse': low_avse,
+                'truedcr': truedcr,
+                'lq': lq
             })
         df = pd.DataFrame(results)
     df.to_csv("results.csv", index=False)
