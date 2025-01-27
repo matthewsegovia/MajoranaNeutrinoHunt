@@ -6,26 +6,18 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score
 
 
-#train = pd.read_csv('/Users/marcosanchez/Downloads/PROCESSED_MJD_TRAIN.csv')
-#test = pd.read_csv('/Users/marcosanchez/Downloads/PROCESSED_MJD_TEST.csv')
+train = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TRAIN_PROCESSED.csv')
+test = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TEST_PROCESSED.csv')
+
 
 # %%
-# temp data until full data is ready
-temp = pd.read_csv('/Users/marcosanchez/MajoranaHunt/results.csv')
 
-X = temp.drop(['highavse', 'lowavse', 'truedcr', 'lq'], axis=1)
-y = temp["highavse"]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# %%
-"""
 train_data = train.drop(['highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
-train_target = temp['highavse']
+train_target = train['highavse']
 
-test_data =
-test_target =
-"""
+test_data = test.drop(['highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
+test_target = test['highavse']
+
 
 #model training
 model = CatBoostClassifier(
