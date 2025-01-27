@@ -27,12 +27,14 @@ from parameter_functions.rising_edge import rising_edge_slope
 # Get all HDF5 files in the data directory
 data_dir = os.path.join(repo_base_dir, "data/")
 data_files = [f for f in os.listdir(str(data_dir)) if f.endswith(".hdf5")]
+print(data_files)
+
 
 # %%
 # Parameter extraction from all waveform data
 results = []
-for file in data_files:
-    with h5py.File(file, 'r') as f:
+for file in data_files[-5:]:
+    with h5py.File(data_dir+file, 'r') as f:
         for wave in np.arange(f['raw_waveform'].shape[0]):
             # Needed labels
             waveform = f['raw_waveform'][wave]
@@ -84,4 +86,5 @@ for file in data_files:
                 'lq': lq
             })
         df = pd.DataFrame(results)
-    df.to_csv("results.csv", index=False)
+    df.to_csv(file+".csv", index=False)
+    print(file+".csv saved")
