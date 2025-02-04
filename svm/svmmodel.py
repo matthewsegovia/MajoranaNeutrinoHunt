@@ -5,18 +5,13 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import GridSearchCV
 
-
-
-
 # %%
-
 train = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TRAIN_PROCESSED.csv')
 test = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TEST_PROCESSED.csv')
 train = train.dropna()
 test = test.dropna()
 
 # %%
-
 train_data = train.drop(['id', 'highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
 train_target = train['highavse']
 
@@ -28,7 +23,7 @@ scaler = StandardScaler()
 train_data = scaler.fit_transform(train_data)
 # %%
 svm_model = SVC(kernel='linear', C=1.0, gamma='scale', random_state=42)
-svm_model.fit(train_data[:1000], train_target[:1000])
+svm_model.fit(train_data, train_target)
 
 # %%
 preds = svm_model.predict(test_data)
