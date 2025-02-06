@@ -1,49 +1,70 @@
 # %%
+
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
+from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import StratifiedKFold, cross_val_score, GridSearchCV, RandomizedSearchCV
+from imblearn.over_sampling import SMOTE
+from scipy.stats import uniform, randint
 
-# %%
-train = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TRAIN_PROCESSED.csv')
-test = pd.read_csv('/Users/marcosanchez/Downloads/MJD_TEST_PROCESSED.csv')
+# %% 
+train = pd.read_csv('C:/Users/marco/Downloads/MJD_TRAIN_PROCESSED.csv')
+test = pd.read_csv('C:/Users/marco/Downloads/MJD_TEST_PROCESSED.csv')
+
 train = train.dropna()
 test = test.dropna()
 
-# %%
-train_data = train.drop(['id', 'highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
+train_data = train.drop(['id', 'energylabel', 'highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
 train_target = train['highavse']
 
+test_data = test.drop(['id', 'energylabel', 'highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
+test_target = test['highavse']
 
-test_data = test.drop(['id', 'highavse', 'lowavse', 'truedcr', 'lq'], axis = 1)
-test_target = pd.DataFrame(test['highavse'])
+smote = SMOTE() 
+train_data, train_target = smote.fit_resample(train_data, train_target)
 
+
+# %% 
 scaler = StandardScaler()
 train_data = scaler.fit_transform(train_data)
-# %%
-svm_model = SVC(kernel='linear', C=1.0, gamma='scale', random_state=42)
-svm_model.fit(train_data, train_target)
+test_data = scaler.transform(test_data) 
+
+# %% 
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+svm_model = LinearSVC(max_iter=1000, C=1.0, random_state=42, dual=False, verbose=0)
+
+cv_scores = cross_val_score(svm_model, train_data, train_target, cv=cv, scoring='accuracy', n_jobs=-1)
+
+print(f"Cross-Validation Accuracy Scores: {cv_scores}")
+print(f"Mean Cross-Validation Accuracy: {cv_scores.mean()}")
+print(f"Standard Deviation of Cross-Validation Accuracy: {cv_scores.std()}")
 
 # %%
-preds = svm_model.predict(test_data)
-print("Accuracy:", accuracy_score(test_target, preds))
-print("\nClassification Report:\n", classification_report(test_target, preds))
-print("\nConfusion Matrix:\n", confusion_matrix(test_target, preds))
-
-
-# %%
-# Define hyperparameter grid
-param_grid = {
-    'C': [0.1, 1, 10],
-    'kernel': ['linear', 'rbf', 'poly'],
-    'gamma': ['scale', 'auto']
+param_dist = {
+    'C': uniform(0.1, 10),
+    'loss': ['hinge', 'squared_hinge'],
+    'tol': uniform(1e-5, 1e-2)
 }
 
-# Grid search
-grid_search = GridSearchCV(SVC(), param_grid, cv=5, scoring='accuracy')
+random_search = RandomizedSearchCV(LinearSVC(max_iter=1000, dual=False), param_distributions=param_dist, n_iter=10, cv=cv, scoring='accuracy', n_jobs=-1, verbose=1)
+random_search.fit(train_data, train_target)
+
+print("Best Parameters found by RandomizedSearchCV:")
+print(random_search.best_params_)
+print("Best Accuracy Score: ", random_search.best_score_)
+
+# %%
+param_grid = {
+    'C': [0.1, 1, 10],
+    'loss': ['hinge', 'squared_hinge'],
+    'tol': [1e-3, 1e-4, 1e-5]
+}
+
+grid_search = GridSearchCV(LinearSVC(max_iter=1000, dual=False), param_grid, cv=cv, scoring='accuracy', n_jobs=-1, verbose=1)
 grid_search.fit(train_data, train_target)
 
-# Best parameters and score
-print("Best Parameters:", grid_search.best_params_)
+print("Best Parameters found by GridSearchCV:")
+print(grid_search.best_params_)
 print("Best Cross-Validated Accuracy:", grid_search.best_score_)
