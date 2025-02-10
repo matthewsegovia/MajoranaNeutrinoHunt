@@ -19,7 +19,11 @@ How to clone the repository:
 git clone https://github.com/matthewsegovia/MajoranaNeutrinoHunt.git
 ``` 
 
-The requriements.txt file lists all the python packages as well as versions needed prior to running the code.
+The requriements.txt file lists all the python packages as well as versions needed prior to running the code. To install any dependencies run:
+``` bash
+pip install -r requirements.txt
+``` 
+
 
 ## Features
 This repository contains the files for all parameters functions that will be used to build and train machine learning models 
