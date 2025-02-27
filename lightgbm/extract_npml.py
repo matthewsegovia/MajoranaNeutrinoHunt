@@ -56,12 +56,7 @@ pipeline = Pipeline([
 # Train the model on the training set
 pipeline.fit(X_res, y_res)
 
-# Make predictions on the test set
-y_pred = pipeline.predict(X_test_res)
+file_path = 'npml_low_avse.csv'
+np.savetxt(file_path, pipeline.predict(npml.drop('id', axis=1)), delimiter=',', fmt='%d')
 
-# Evaluate the model
-print("Accuracy:", accuracy_score(y_test_res, y_pred))
-print("Confusion Matrix:")
-print(confusion_matrix(y_test_res, y_pred))
-print("Classification Report:")
-print(classification_report(y_test_res, y_pred))
+print(f"Array saved to {file_path}")
