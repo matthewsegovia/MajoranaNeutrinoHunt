@@ -16,10 +16,10 @@ train = train.dropna()  #remove missing and na values
 
 # Features
 train_data = train.drop(['id', 'energylabel', 'highavse', 'lowavse', 'truedcr', 'lq'], axis=1)
-train_target = train['highavse']
+train_target = train['lq']
 
 test_data = test.drop(['id', 'energylabel', 'highavse', 'lowavse', 'truedcr', 'lq'], axis=1)
-test_target = test['highavse']
+test_target = test['lq']
 
 # Balancing the labels
 smote = SMOTE(random_state=42)
