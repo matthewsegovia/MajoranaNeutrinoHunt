@@ -10,23 +10,36 @@ Contributors:
 - Ketki Chakradeo
 - Marco Sanchez
 
+## Classification Subgroup:
+- Ketki Chakradeo
+- Marco Sanchez
+- Jun Hwang
+- Ryan Doh
+
 ## Description
-The goal of this project is to develop parameters that will be extracted from the time series data provided to us publicly by the Majorana Demonstrator experiement in order to propose machine learning models that meet the requirements outlined in the Neutrino Physics and Machine Learning (NPML) instructions included in the Majorana Demonstrator data release notes.
+The goal of this project is to develop parameters that will be extracted from the time series data provided to us publicly by the Majorana Demonstrator experiement in order to propose machine learning models that meet the requirements outlined in the Neutrino Physics and Machine Learning (NPML) instructions included in the Majorana Demonstrator data release notes. Models in this repository include CatBoost, XG Boost, LightGBM and Random Forest.
 
 ## Installation Instructions
 How to clone the repository:
 ``` bash
 git clone https://github.com/matthewsegovia/MajoranaNeutrinoHunt.git
 ``` 
-
-The requriements.txt file lists all the python packages as well as versions needed prior to running the code. To install any dependencies run:
+In order to clone the dependencies needed for our project, follow the next steps. Make sure you have Anaconda installed.<br><br>
+### Anaconda Environemnt Instructions
+#### 1. Replace `name_of_environment` with a name you like:
 ``` bash
-pip install -r requirements.txt
-``` 
-
+conda env create -f environment.yml --name name_of_environment
+```
+#### 2. Activate the environment:
+``` bash
+conda activate name_of_environment
+```
+### Download the Proprocessed Dataset or Preprocess your own raw Data:
+#### Download the preprocessed dataset:
+Download the preprocessed data from this [link](https://drive.google.com/drive/folders/1SnmQemcXWPvKvJBmGkd0hSqTQ8gbs0C4), place all the csv files in the same directory as the cloned repository before running the master.py file found under the src folder.
 
 ## Features
-This repository contains the files for all parameters functions that will be used to build and train machine learning models 
+This repository contains the files for all parameters functions that were used to build and train machine learning models
 
 The parameters used in this investigation include:
 
@@ -52,13 +65,23 @@ The parameters used in this investigation include:
 
 - **Fourier Transform and Low Frequency Power Ratio** (fourier_lfpr.py): The Fourier Transform is a mathematical operation that transforms a time-domain signal into its frequency-domain representation. Low Frequency Power Ratio (LFPR) is used, quantifying how much of the signal’s energy is concentrated in the low-frequency threshold by the total power spectrum of the Fourier transformed waveform.  
 
-The Master.py file combines all these parameters into one file.
-
-## Reproducing the Code
-The data can be downloaded at this [link](https://zenodo.org/records/8257027). There are 25 different data files, and this data is not processed. In order to extract parameters from the data, download the raw data and run the Master.py script located in the src folder of the repository. The src folder also contains a parameter-functions folder with each parameter extraction function separately defined. Finally, the Majorana Data that has been processed by the Master.py script can be found in this [Google Drive](https://drive.google.com/drive/folders/1SnmQemcXWPvKvJBmGkd0hSqTQ8gbs0C4?usp=sharing).
+The Master.py file combines all these parameters into one file. removedupes.py removes all duplicate rows in the processed files. 
 
 ## Data Analysis
 Each folder in the repositiory contains a data model that is either a classification or a regression model. The folders contain the code as well as the results of each model.
+
+## File Explanation
+root/
+- src/
+  - parameter-functions/
+    - Parameter extraction files needed for Mater.py
+    - Data/
+      - npml_cut.csv: Classification result from B10-2 (We are B10-1)
+- README.md
+- Analysis_Unidoc.pdf: Copy of our report
+- environment.yml: Anaconda Environment file
+- requirements.txt: requirements file
+
 
 ## Further Reading
 [Majorana Demonstrator Data Release Notes](https://arxiv.org/pdf/2308.10856)
