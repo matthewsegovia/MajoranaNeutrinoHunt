@@ -34,9 +34,8 @@ conda env create -f environment.yml --name name_of_environment
 ``` bash
 conda activate name_of_environment
 ```
-### Download the Proprocessed Dataset or Preprocess your own raw Data:
-#### Download the preprocessed dataset:
-Download the preprocessed data from this [link](https://drive.google.com/drive/folders/1SnmQemcXWPvKvJBmGkd0hSqTQ8gbs0C4), place all the csv files in the same directory as the cloned repository before running the master.py file found under the src folder.
+### Download the Proprocessed Dataset:
+Download the preprocessed data from this [link](https://drive.google.com/drive/folders/1SnmQemcXWPvKvJBmGkd0hSqTQ8gbs0C4), These data files were pre processed using the Master.py script in the src folder.
 
 ## Features
 This repository contains the files for all parameters functions that were used to build and train machine learning models
