@@ -75,8 +75,6 @@ root/
 - src/
   - parameter-functions/
     - Parameter extraction files needed for Mater.py
-    - Data/
-      - npml_cut.csv: Classification result from B10-2 (We are B10-1)
 - README.md
 - Analysis_Unidoc.pdf: Copy of our report
 - environment.yml: Anaconda Environment file
