@@ -72,10 +72,29 @@ Each folder in the repositiory contains a data model that is either a classifica
 ## File Explanation
 root/
 - src/
-  - parameter-functions/
-    - Parameter extraction files needed for Mater.py
+  - classification-models/ : each folder contains the notebook with the model code and results, as well as the results from the model being run on the NPML dataset. Extra documents include visualizations for the model.
+    - catboost/
+    - randomforest/
+    - lightgbm/
+    - svm/
+    - XGBoost/
+  - NPML/
+    - npmlcombine.py : script to run on NPML dataset
+    - npmlpredictions.csv : predictions from classification models run on NPML dataset
+  - parameter-functions: each file contains a script to extract a specific parameter
+    - agr.py
+    - current_amplitude.py
+    - dcr.py
+    - fourier_lfpr.py
+    - inflection.py
+    - lq80.py
+    - peakandtailslope.py
+    - rea.py
+    - rising_edge.py
+    - tdrift.py
+  - Master.py: combined all parameter extraction functions into one script. This was used to pre-process the data.
+  - removedupes.py: removes duplicates from the dataset
 - README.md
-- Analysis_Unidoc.pdf: Copy of our report
 - environment.yml: Anaconda Environment file
 - requirements.txt: requirements file
 
