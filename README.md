@@ -17,7 +17,7 @@ Contributors:
 - Ryan Doh
 
 ## Description
-The goal of this project is to develop parameters that will be extracted from the time series data provided to us publicly by the Majorana Demonstrator experiement in order to propose machine learning models that meet the requirements outlined in the Neutrino Physics and Machine Learning (NPML) instructions included in the Majorana Demonstrator data release notes. Models in this repository include CatBoost, XG Boost, LightGBM and Random Forest.
+The goal of this project is to develop parameters that will be extracted from the time series data provided to us publicly by the Majorana Demonstrator experiement in order to propose machine learning models that meet the requirements outlined in the Neutrino Physics and Machine Learning (NPML) instructions included in the Majorana Demonstrator data release notes. Models in this repository include CatBoost, XG Boost, LightGBM, SVM, Decision Tree and Random Forest.
 
 ## Installation Instructions
 How to clone the repository:
@@ -74,7 +74,7 @@ root/
 - src/
   - classification-models/ : each folder contains the notebook with the model code and results, as well as the results from the model being run on the NPML dataset. Extra documents include visualizations for the model.
     - catboost/
-    - randomforest/
+    - decisiontree/
     - lightgbm/
     - svm/
     - XGBoost/
